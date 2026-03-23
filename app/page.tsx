@@ -1,54 +1,58 @@
-import { LucideTerminal, LucideZap, LucideBrainCircuit } from "lucide-react";
+"use client";
+import React from 'react';
+import { LayoutDashboard, Sparkles, Zap, Search } from 'lucide-react';
 
-export default function Home() {
-  return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-[#0a0a0a] px-6">
-      {/* Background Blobs */}
-      <div className="absolute -top-[10%] -left-[10%] h-[40rem] w-[40rem] rounded-full bg-purple-600/10 blur-[120px] pointer-events-none" />
-      <div className="absolute -bottom-[10%] -right-[10%] h-[40rem] w-[40rem] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none" />
-
-      {/* Hero Section */}
-      <section className="relative flex flex-col items-center text-center max-w-4xl z-10 space-y-8">
-        <div className="inline-flex items-center space-x-2 glass px-4 py-2 rounded-full border border-zinc-800 text-sm font-medium text-zinc-400">
-          <LucideZap className="w-4 h-4 text-purple-400 fill-purple-400/20" />
-          <span>SaaS Factory v1.0 is Live</span>
-        </div>
-
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight gradient-text">
-          Building the Future of <br className="hidden md:block" />
-          <span className="text-white">AI-First Applications</span>
-        </h1>
-
-        <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-          The ultimate foundation for rapid SaaS development. Built with Next.js, 
-          Supabase, and cutting-edge AI. Scale from zero to hero in 30 seconds.
-        </p>
-
-        <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
-          <a 
-            href="#"
-            className="flex items-center justify-center space-x-2 bg-white text-black font-semibold px-8 py-4 rounded-xl hover:bg-zinc-200 transition-all w-full sm:w-auto hover:scale-105 active:scale-95 shadow-lg shadow-white/5"
-          >
-            <LucideTerminal className="w-5 h-5" />
-            <span>npx rullolabs start</span>
-          </a>
-          <a 
-            href="#"
-            className="flex items-center justify-center space-x-2 glass border border-zinc-800 font-semibold px-8 py-4 rounded-xl hover:bg-zinc-900 transition-all text-zinc-400 w-full sm:w-auto hover:scale-105 active:scale-95"
-          >
-            <LucideBrainCircuit className="w-5 h-5 mr-1" />
-            Explore Docs
-          </a>
-        </div>
-      </section>
-
-      {/* Trust Badges / Footer Info */}
-      <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-40 grayscale hover:grayscale-0 transition-all cursor-default select-none pb-20">
-        <span className="font-bold text-xl">Supabase</span>
-        <span className="font-bold text-xl">OpenAI</span>
-        <span className="font-bold text-xl">Stripe</span>
-        <span className="font-bold text-xl">Resend</span>
-      </div>
-    </main>
-  );
+export default function Dashboard() {
+    return (
+          <div className="flex h-screen bg-black text-white font-sans overflow-hidden">
+                <aside className="w-64 border-r border-zinc-900 bg-[#050505] p-6 flex flex-col">
+                        <div className="flex items-center gap-3 mb-10">
+                                  <Zap className="text-purple-500 fill-purple-500/20" />
+                                  <span className="font-bold text-xl tracking-tight">SaaS 2026</span>span>
+                        </div>div>
+                        <nav className="space-y-4">
+                                  <div className="flex items-center gap-3 text-purple-400 cursor-pointer hover:text-purple-300 transition-colors">
+                                              <LayoutDashboard size={20} /> Overview
+                                  </div>div>
+                                  <div className="flex items-center gap-3 text-zinc-500 cursor-pointer hover:text-white transition-colors">
+                                              <Sparkles size={20} /> AI Models
+                                  </div>div>
+                        </nav>nav>
+                </aside>aside>
+                <main className="flex-1 flex flex-col p-8 relative">
+                        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/10 blur-[100px] rounded-full" />
+                        <header className="flex justify-between items-center mb-10 z-10">
+                                  <div className="relative w-96">
+                                              <Search className="absolute left-3 top-2.5 w-4 h-4 text-zinc-500" />
+                                              <input className="w-full bg-zinc-900 border border-zinc-800 rounded-lg py-2 pl-10 pr-4 focus:outline-none focus:ring-1 focus:ring-purple-500/50" placeholder="Search insights..." />
+                                  </div>div>
+                                  <div className="bg-white text-black px-6 py-2 rounded-lg font-bold cursor-pointer hover:bg-zinc-200 transition-all shadow-lg shadow-white/5">
+                                              Deploy AI
+                                  </div>div>
+                        </header>header>
+                        <div className="bg-zinc-900/40 backdrop-blur-md p-8 rounded-2xl border border-purple-500/20 mb-8 relative z-10">
+                                  <h1 className="text-3xl font-bold mb-2 tracking-tight">Intelligence Dashboard</h1>h1>
+                                  <p className="text-zinc-400">Real-time metrics and AI insights for your SaaS factory.</p>p>
+                        </div>div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+                                  <Card label="Active Users" value="2,450" change="+12%" />
+                                  <Card label="Revenue" value="$12,840" change="+8.4%" />
+                                  <Card label="AI Invocations" value="14.2k" change="+45%" />
+                        </div>div>
+                </main>main>
+          </div>div>
+        );
 }
+
+function Card({ label, value, change }) {
+    return (
+          <div className="bg-zinc-900/30 border border-zinc-800 p-6 rounded-xl hover:border-zinc-700 transition-colors group">
+                <div className="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">{label}</div>div>
+                <div className="flex items-baseline gap-2 mt-2">
+                        <div className="text-2xl font-bold text-white tracking-tight">{value}</div>div>
+                        <div className="text-[10px] text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded">{change}</div>div>
+                </div>div>
+          </div>div>
+        );
+}
+</div>
