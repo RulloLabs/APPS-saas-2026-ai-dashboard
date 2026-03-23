@@ -1,42 +1,8 @@
-# Project Name
+# SaaS 2026 AI Dashboard | Production Ready
 
-## Stack
-- **Next.js**: Main application framework
-- **Supabase**: Backend & Database
-- **OpenAI**: AI integration & Intelligence
-- **Stripe**: Payment processing
-- **Resend**: Transactional emails
+This is a state-of-the-art SaaS dashboard built with Next.js (App Router), Tailwind CSS, and AI-first engineering principles.
 
-## Architecture
-- `/app`: App router (v15+)
-- `/components`: Reusable UI modules
-- `/lib`: Helper utilities and API clients
-- `/api`: Serverless API routes
-- `/styles`: Global and specific styles
-- `/public`: Static assets
-
-## Setup
-
-1.  **Clone the Repository**:
-    ```bash
-    git clone https://github.com/rullolabs/YOUR_REPO_NAME
-    ```
-
-2.  **Install Dependencies**:
-    ```bash
-    npm install
-    ```
-
-3.  **Environment Variables**:
-    Copy `.env.example` to `.env.local` and fill in the required keys.
-
-4.  **Run Development Server**:
-    ```bash
-    npm run dev
-    ```
-
-## 🚀 Deployment
-Automated via GitHub Actions and Vercel. Push to `main` for production or `dev` for staging.
-
----
-Created by RulloLabs
+## Features
+- **Adaptive Density**: Toggle between standard and compact views for maximum productivity.
+- - **AI Insights**: Built-in AI layers for real-time business analysis and recommendations.
+  - - **Command Bar**: Global shortcut-driven interface (
